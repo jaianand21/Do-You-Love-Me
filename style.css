@@ -1,0 +1,151 @@
+
+
+/* Theme variables */
+:root{
+  /* richer, slightly stronger pastels to avoid looking pale */
+  --bg-1: #fd2770;
+  --bg-2: #ffd1b8;
+  --card-bg: rgba(255,255,255,0.92);
+  --accent: #ff5270;
+  --accent-2: #4fc9ff;
+  --success: #39d98a;
+  --danger: #ff6b6b;
+  --muted: #4d5256;
+  --shadow: 0 10px 36px rgba(17,24,39,0.12);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(135deg,var(--bg-1),var(--bg-2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  color:#111;
+}
+
+.container{
+  width:100%;
+  max-width:720px;
+  background:var(--card-bg);
+  border-radius:20px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:center;
+  text-align:center;
+}
+
+.site-header h1{
+  font-size:1.6rem;
+  letter-spacing:0.2px;
+  margin:0;
+}
+.site-sub{color:var(--muted);font-size:0.95rem}
+
+.media{
+  width:100%;
+  max-width:420px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(10,10,40,0.08);
+  background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+  padding:12px;
+}
+.media .tenor-gif-embed{width:100%}
+
+.message{
+  font-size:2.15rem;
+  line-height:1.4;
+}
+.message1{
+  font-size:1.15rem;
+  line-height:1.4;
+}
+
+.message-text{color:#000;font-weight:700;font-size:1.2rem;display:block;margin-top:6px}
+
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  padding:12px 22px;
+  border-radius:999px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 6px 18px rgba(17,24,39,0.08);
+}
+.btn:focus{outline:3px solid rgba(0,0,0,0.06);outline-offset:4px}
+.btn-primary{background:linear-gradient(90deg,var(--accent),#ff8aa2); color:white}
+.btn-ghost{background:transparent; border:1px solid rgba(17,24,39,0.08); color:var(--muted)}
+
+.btn:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(17,24,39,0.12)}
+
+.small{font-size:0.9rem}
+
+/* Responsive */
+@media (max-width:520px){
+  .container{padding:20px;border-radius:16px}
+  .site-header h1{font-size:1.25rem}
+  .media{max-width:320px}
+}
+
+/* Confetti */
+.confetti{
+  position:fixed;
+  width:10px;
+  height:10px;
+  border-radius:2px;
+  opacity:0.95;
+  pointer-events:none;
+  transform:translateY(-100vh);
+  animation:confetti-fall 2600ms linear forwards;
+}
+@keyframes confetti-fall{
+  0%{transform:translateY(-10vh) rotate(0); opacity:1}
+  100%{transform:translateY(110vh) rotate(360deg); opacity:0.9}
+}
+
+/* Heart bubbles */
+.heart-bubble{position:fixed;pointer-events:none;font-size:18px;transform:translateY(0);animation:heart-rise 1200ms ease-out forwards}
+@keyframes heart-rise{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-160px) scale(1.4);opacity:0}}
+
+/* Modal styles */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:999}
+.modal[hidden]{display:none}
+.modal-backdrop{position:absolute;inset:0;background:linear-gradient(180deg, rgba(17,24,39,0.18), rgba(17,24,39,0.30));backdrop-filter:blur(4px)}
+.modal-panel{position:relative;background:var(--card-bg);padding:18px;border-radius:12px;box-shadow:var(--shadow);z-index:10;min-width:280px;max-width:92%;text-align:center}
+.modal-panel h2{margin:0 0 6px;font-size:1.25rem}
+.modal-panel .modal-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.num-btn{background:transparent;border:1px dashed rgba(0,0,0,0.06);padding:10px 12px;border-radius:8px;font-weight:700}
+
+/* Footer */
+.site-footer{margin-top:12px;color:var(--muted);font-size:0.85rem}
+.site-footer small{display:inline-flex;align-items:center;gap:8px}
+/* micro animations */
+.bubble{animation:bubble 3s ease-in-out infinite}
+@keyframes bubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* Shake feedback for blocked no clicks */
+@keyframes shake{0%{transform:translateX(0)}25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}100%{transform:translateX(0)}}
+.shake{animation:shake .6s ease}
+
+/* NO button styling: white border and improved contrast */
+.btn-no{cursor:pointer; border:1px solid #fff; color:var(--muted); background:transparent; transition:transform .18s ease, background .12s ease, color .12s ease}
+.btn-no:hover{background:rgba(255,255,255,0.10); color:#fff; transform:translateY(-3px)}
+.btn-no:focus{outline:3px solid rgba(255,255,255,0.16); outline-offset:3px}

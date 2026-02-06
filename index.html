@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A cute interactive page to ask someone whether they love you.">
+  <meta name="theme-color" content="#ffd6e7">
+  <title>Proposed Her</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <meta property="og:title" content="Do you love me?">
+  <meta property="og:description" content="A cute interactive page to ask someone if they love you.">
+  <meta property="og:image" content="favicon.svg">
+</head>
+<body>
+  <main class="container">
+    <header class="site-header">
+      <h1>Do you love me? 🤗</h1>
+      <p class="site-sub"> Jaggi is all yours — pick carefully 💖</p>
+    </header>
+
+    <div class="media bubble">
+      <div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918" data-width="100%">
+        <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a> from <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+      </div>
+      <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+    <p class="message"><span class="message-text">Do you Love me???</span></p>
+
+    <div class="buttons">
+      <button class="btn btn-primary" id="open-yes" aria-haspopup="dialog">Yes ❤️</button>
+      <a class="btn btn-ghost btn-no no-static" href="page1.html" aria-label="Say no">No ❌</a>
+    </div>
+
+    <!-- Yes modal: choose a numbered option or confirm -->
+    <div id="yes-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="yes-modal-title" hidden>
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-panel" role="document">
+        <h2 id="yes-modal-title">Choose an option</h2>
+        <p class="small">Pick a number to view a page, or confirm to say Yes.</p>
+        <div class="modal-actions">
+          <a class="btn num-btn" href="page1.html">1</a>
+          <a class="btn num-btn" href="page2.html">2</a>
+          <a class="btn num-btn" href="page3.html">3</a>
+        </div>
+        <div class="modal-actions" style="margin-top:14px;">
+          <a class="btn btn-primary" id="confirm-yes" href="final.html">Confirm Yes</a>
+          <button class="btn btn-ghost" id="cancel-yes">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <small>Made with <span aria-hidden="true">❤️</span> · Built with care by Jai Anand</small>
+    </footer>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

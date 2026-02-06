@@ -1,0 +1,11 @@
+{
+  "name": "Do you love me?",
+  "short_name": "DoYou",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffd6e7",
+  "theme_color": "#ffd6e7",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "64x64", "type": "image/svg+xml" }
+  ]
+}
